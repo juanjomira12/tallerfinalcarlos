@@ -7,7 +7,7 @@ import { Login } from './features/auth/Login';
 import { Register } from './features/auth/Register';
 import { OlvideContrasena } from './features/auth/OlvideContrasena';
 import { ApiPage } from './features/api/components/ApiPage';
-import Dashboard from './features/dashboard/components/Dashboard';
+import dashboard from './features/dashboard/components/dashboard';
 import { getCurrentUser, getToken } from './features/auth/authService';
 
 function ProtectedRoute({ children }) {
