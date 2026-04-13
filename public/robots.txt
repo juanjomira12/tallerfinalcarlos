@@ -1,0 +1,3 @@
+user-agent: *
+Allow: /
+sitemap:https://Taller3.vercel.app/sitemap.xml

@@ -1,0 +1,224 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --page-bg: linear-gradient(180deg, #eef6ff 0%, #dfeeff 48%, #f7fbff 100%);
+  --ink: #15304b;
+  --muted: #5f7894;
+  --line: rgba(120, 160, 210, 0.18);
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-strong: rgba(255, 255, 255, 0.88);
+  --primary: #2f78c4;
+  --primary-dark: #1f5d9d;
+  --accent: #78b8ff;
+  --shadow: 0 24px 60px rgba(30, 72, 115, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(120, 184, 255, 0.5), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(230, 242, 255, 0.95));
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: "";
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(4px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.app-shell::before {
+  width: 18rem;
+  height: 18rem;
+  top: 7rem;
+  right: -5rem;
+  background: rgba(120, 184, 255, 0.22);
+}
+
+.app-shell::after {
+  width: 22rem;
+  height: 22rem;
+  bottom: 4rem;
+  left: -7rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.section-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(47, 120, 196, 0.12);
+}
+
+.hero-stat,
+.insight-card,
+.expense-card,
+.auth-card,
+.dashboard-card {
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.hero-stat strong,
+.insight-card strong,
+.expense-card strong,
+.dashboard-card strong {
+  display: block;
+  font-size: 1.7rem;
+  color: var(--ink);
+}
+
+.muted-copy {
+  color: var(--muted);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 14px 28px rgba(47, 120, 196, 0.28);
+}
+
+.primary-button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--primary-dark);
+  border: 1px solid rgba(47, 120, 196, 0.15);
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-dark);
+}
+
+.auth-page {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  padding: 7rem 0 4rem;
+}
+
+.auth-card {
+  background: var(--glass-strong);
+}
+
+.auth-input.form-control {
+  border-radius: 18px;
+  border: 1px solid rgba(120, 160, 210, 0.25);
+  padding: 0.95rem 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink);
+}
+
+.auth-input.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(120, 184, 255, 0.24);
+  border-color: rgba(47, 120, 196, 0.42);
+}
+
+.dashboard-layout {
+  padding: 7rem 0 4rem;
+}
+
+.expense-pill {
+  border-radius: 999px;
+  background: rgba(120, 184, 255, 0.14);
+  color: var(--primary-dark);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.table-soft {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--ink);
+}
+
+.table-soft tbody tr {
+  border-color: rgba(120, 160, 210, 0.16);
+}
+
+.top-nav {
+  background: rgba(234, 244, 255, 0.68);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(120, 160, 210, 0.16);
+}
+
+.brand-mark {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(47, 120, 196, 0.16), rgba(120, 184, 255, 0.48));
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.footer-shell {
+  background: rgba(239, 247, 255, 0.86);
+  border-top: 1px solid rgba(120, 160, 210, 0.16);
+  backdrop-filter: blur(16px);
+}
+
+@media (max-width: 768px) {
+  .auth-page,
+  .dashboard-layout {
+    padding-top: 6rem;
+  }
+}
