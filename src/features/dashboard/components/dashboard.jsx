@@ -11,7 +11,7 @@ const movements = [
   { concept: 'Transferencia a ahorro', category: 'Meta', amount: '$25.000', status: 'Positivo' },
 ];
 
-function Dashboard() {
+ export function Dashboard() {
   const user = JSON.parse(localStorage.getItem('daily-expenses-user') || '{}');
 
   return (
